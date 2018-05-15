@@ -40,14 +40,18 @@ namespace BasicTokenAuthAPI
         public void OAuthConfiguration(IAppBuilder app)
         {
             // init custom OAuth authorization server provider
-            var provider = new BaseOAuthAuthorizationServerProvider();
+            var oAuthProvider = new BaseOAuthAuthorizationServerProvider();
+
+            // init custom refresh token provider
+            var refreshTokenProvider = new BaseRefreshTokenProvider();
 
             OAuthAuthorizationServerOptions options = new OAuthAuthorizationServerOptions
             {
                 AllowInsecureHttp = true, // for dev mode
                 TokenEndpointPath = new PathString("/token"),
                 AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60), // 1 hours
-                Provider = provider
+                Provider = oAuthProvider,
+                RefreshTokenProvider = refreshTokenProvider
             };
 
             app.UseOAuthAuthorizationServer(options);
