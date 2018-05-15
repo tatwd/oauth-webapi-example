@@ -10,6 +10,11 @@ namespace BasicTokenAuthAPI.OAuth
 {
     public class BaseRefreshTokenProvider : IAuthenticationTokenProvider
     {
+        // The refresh token is saved in RAM
+        // when close the app you must login to
+        // get a new token and refresh token.
+        // If you dislike this way, you may save
+        // it in your database table.
         private readonly ConcurrentDictionary<string, string> _refreshToken =
             new ConcurrentDictionary<string, string>(StringComparer.Ordinal);
 
