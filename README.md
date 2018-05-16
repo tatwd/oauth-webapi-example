@@ -7,11 +7,11 @@ OAuth basic implement in ASP.NET WebAPI
      +-----+-----+
            |
            Y
-       +---+---+              No
+       +---+---+              Yes
       +  null?  +----------------------------------------+
        +---+---+                                         |
            |                                             |
-           | Yes                                         |
+           | No                                          |
            Y                                             |
     +------+------+                                      |
     | compute time|                                      |
