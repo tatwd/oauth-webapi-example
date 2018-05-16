@@ -28,5 +28,22 @@ namespace TServices
                 }
             });
         }
+
+        public static bool Register(TUser newUser)
+        {
+            using (TestDbEntities db = new TestDbEntities())
+            {
+                db.TUsers.Add(newUser);
+                return db.SaveChanges() > 0;
+            }
+        }
+
+        public static Task<bool> RegisterAsync(TUser newUser)
+        {
+            return Task.Run(() =>
+            {
+                return Register(newUser);
+            });
+        }
     }
 }

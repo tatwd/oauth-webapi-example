@@ -1,0 +1,10 @@
+[*]
+end_of_line = crlf
+charset = utf-8
+
+[*.{html,js,css}]
+indent_size = 2
+indent_style = space
+
+[*.xml]
+indent_style = space

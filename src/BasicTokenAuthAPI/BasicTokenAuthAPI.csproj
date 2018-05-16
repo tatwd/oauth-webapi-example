@@ -111,10 +111,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="static\index.html" />
+    <Content Include="static\main.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Filters\AuthorizeAttribute.cs" />
     <Compile Include="OAuth\BaseOAuthAuthorizationServerProvider.cs" />
@@ -123,6 +126,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include=".editorconfig" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
