@@ -26,7 +26,7 @@ OAuth basic implement in ASP.NET WebAPI
                                       | No                          |               |
                                       Y                             Y               |
   +-----------+              +--------+--------+               +----+----+          |  
-  |    Enter  +<-------------|      Update     +<-------------+ success?  +         |
+  |    Enter  +<-------------+      Update     +<-------------+ success?  +         |
   |   System  |              |       Token     |     Yes       +----+----+          |
   +-----------+              +--------+--------+                    |               |
                                       ^                          No |               |
