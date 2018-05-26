@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using TModel;
+using TServices;
 
 namespace BasicTokenAuthAPI.Controllers
 {
@@ -58,5 +59,13 @@ namespace BasicTokenAuthAPI.Controllers
             return Json(user);
         }
 
+        [HttpGet]
+        [Route("products")]
+        [Authorize]
+        public IHttpActionResult GetProducts()
+        {
+            var products = ProductService.GetAllProducts();
+            return Json(products);
+        }
     }
 }
